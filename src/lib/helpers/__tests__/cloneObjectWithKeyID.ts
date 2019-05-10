@@ -1,10 +1,10 @@
-import { addUniqueIDToObject } from "../index";
+import { cloneObjectWithKeyID } from "../index";
 
-describe("addUniqueIDToObject", () => {
+describe("cloneObjectWithKeyID", () => {
   it("adds keyID prop to object", () => {
     const obj: any = {};
     expect(obj["keyID"]).toBeUndefined();
-    const newObj = addUniqueIDToObject(obj);
+    const newObj = cloneObjectWithKeyID(obj);
     expect(newObj.keyID).toBeDefined();
   });
   it("the props of the orginal object stays the same even if keyID has been added", () => {
@@ -14,7 +14,7 @@ describe("addUniqueIDToObject", () => {
         c: 3,
       },
     };
-    const newObj = addUniqueIDToObject(obj);
+    const newObj = cloneObjectWithKeyID(obj);
     expect(newObj.keyID).toBeDefined();
     expect(newObj).toMatchObject({
       ...obj,
