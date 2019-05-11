@@ -23,7 +23,6 @@ const Home: React.SFC<HomeProps> = () => {
               {row.map(card => {
                 return (
                   <SelectionCard
-                    className="selection-cards__row-item"
                     key={card.keyID}
                     description={card.description}
                     extraInfo={
