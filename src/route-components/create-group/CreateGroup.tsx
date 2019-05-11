@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Divider from "@material-ui/core/Divider";
 import TextField from "@material-ui/core/TextField";
 import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import { Link } from "react-router-dom";
 export interface CreateGroupProps {}
 
 const CreateGroup: React.SFC<CreateGroupProps> = () => {
@@ -39,6 +40,10 @@ const CreateGroup: React.SFC<CreateGroupProps> = () => {
             </PrimaryButton>
           </footer>
         </form>
+        <p>
+          Looking for a group?{" "}
+          <Link to="#">Join a group</Link>
+        </p>
       </CardContent>
     </Card>
   );
