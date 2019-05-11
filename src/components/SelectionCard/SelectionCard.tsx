@@ -13,7 +13,7 @@ const SelectionCard: React.SFC<SelectionCardProps> = ({
   extraInfo,
 }) => {
   return (
-    <div className="selection-card">
+    <button className="selection-card">
       <div className="selection-card__icon-container">
         {React.cloneElement(iconElement)}
       </div>
@@ -27,7 +27,7 @@ const SelectionCard: React.SFC<SelectionCardProps> = ({
           {extraInfo}
         </p>
       ) : null}
-    </div>
+    </button>
   );
 };
 
