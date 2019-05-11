@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./home.scss";
 import { selectionCardData } from "./homeData/index";
 import {
   itemsPerRow,
   cloneObjectWithKeyID,
 } from "../../lib/helpers/index";
+import SelectionCard from "../../components/SelectionCard/SelectionCard";
 export interface HomeProps {}
 
 const Home: React.SFC<HomeProps> = () => {
@@ -21,18 +22,20 @@ const Home: React.SFC<HomeProps> = () => {
             <div className="selection-cards__row">
               {row.map(card => {
                 return (
-                  <mi-selection-card
+                  <SelectionCard
+                    className="selection-cards__row-item"
                     key={card.keyID}
                     description={card.description}
-                    extra-info={
+                    extraInfo={
                       card.extraInfo ? card.extraInfo : null
                     }
-                  >
-                    <i
-                      className={card.iconClassName}
-                      slot="icon"
-                    />
-                  </mi-selection-card>
+                    iconElement={
+                      <i
+                        className={card.iconClassName}
+                        slot="icon"
+                      />
+                    }
+                  />
                 );
               })}
             </div>
