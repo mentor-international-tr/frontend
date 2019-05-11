@@ -7,10 +7,10 @@ import themeStyles from "../../lib/styles/variables";
 // We can inject some CSS into the DOM.
 const styles = {
   root: {
-    background: themeStyles.light_blue,
+    background: themeStyles.blue,
     color: themeStyles.white,
     "&:hover": {
-      background: themeStyles.blue,
+      background: themeStyles.darker_blue,
     },
   },
 };
