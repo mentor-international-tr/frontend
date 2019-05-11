@@ -19,7 +19,10 @@ const Home: React.SFC<HomeProps> = () => {
           2,
         ).map(row => {
           return (
-            <div className="selection-cards__row">
+            <div
+              key={row[0].keyID}
+              className="selection-cards__row"
+            >
               {row.map(card => {
                 return (
                   <SelectionCard
