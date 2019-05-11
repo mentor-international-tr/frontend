@@ -32,10 +32,12 @@ export default [
   }),
   new MISelectionCard({
     description: "I'm a country manager",
-    iconClassName: "",
+    extraInfo: "A person who manages.",
+    iconClassName: "fas fa-eye",
   }),
   new MISelectionCard({
     description: "I'm a board member",
-    iconClassName: "",
+    extraInfo: "A person who is a board member.",
+    iconClassName: "fas fa-tasks",
   }),
 ];
