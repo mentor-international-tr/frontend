@@ -6,6 +6,9 @@ section.selection-cards {
     width: 100%;
     height: 100vh;
     background: $light-blue;
+    @media screen and (max-width: $tablet) {
+        padding-top: $space-xl;
+    }
 }
 .selection-cards__header {
     text-align: center;
