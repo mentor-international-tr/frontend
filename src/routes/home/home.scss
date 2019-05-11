@@ -5,9 +5,10 @@ section.selection-cards {
     justify-content: center;
     align-items: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: $space-xl auto 0 auto;
     @media screen and (max-width: $tablet) {
         margin-top: $space-xl;
+        padding: 0 $space-sm;
     }
 }
 .selection-cards__row {
@@ -16,6 +17,9 @@ section.selection-cards {
     margin-bottom: $space-xl;
     & > .selection-card {
         margin-right: $space-xl;
+    }
+    & > .selection-card {
+        background: $light-grey;
     }
     @media screen and (max-width: $tablet) {
         & {
@@ -27,4 +31,3 @@ section.selection-cards {
         }
     }
 }
-
