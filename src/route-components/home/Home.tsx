@@ -11,7 +11,7 @@ const Home: React.SFC<HomeProps> = () => {
   return (
     <>
       <section className="selection-cards">
-        <h2 className="selection-cards__header">
+        <h2 className="selection-cards__heading">
           Tell us who you are!
         </h2>
         <div className="selection-cards__group">

@@ -1,0 +1,26 @@
+@import "../../lib/styles/variables.scss";
+.group-card {
+    margin: 120px auto 0 auto;
+    max-width: 600px;
+}
+
+.create-group-form {
+    display: flex;
+    flex-direction: column;
+    & .create-group__text-field  {
+        margin-bottom: $space-lg;
+    }
+}
+
+.create-group__text-field {
+    margin-bottom: $space-lg;
+}
+
+.create-group__action-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+.create-group__action-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
