@@ -1,0 +1,20 @@
+@import "../../lib/styles/variables.scss";
+.selection-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.selection-cards__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $space-md;
+    & > mi-selection-card {
+        margin-left: $space-md;
+    }
+    @media screen and (max-width: $tablet) {
+        flex-direction: column;
+    }
+}
