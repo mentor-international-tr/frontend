@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Home from "./components/home/Home";
+import Home from "./routes/home/Home";
 
 //How CRA uses environment variables
 //https://facebook.github.io/create-react-app/docs/adding-custom-environment-variables
