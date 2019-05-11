@@ -7,7 +7,6 @@ import {
 } from "../../lib/helpers/index";
 import SelectionCard from "../../components/SelectionCard/SelectionCard";
 export interface HomeProps {}
-
 const Home: React.SFC<HomeProps> = () => {
   return (
     <>

@@ -4,9 +4,15 @@
 section.selection-cards {
     padding-top: 100px;
     width: 100%;
-    background: $light-blue;
+    height: 100vh;
+    background: url("./images/selection-section-bg.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     @media screen and (max-width: $tablet) {
         padding-top: $space-xl;
+        height: 100%;
     }
 }
 .selection-cards__header {
@@ -14,7 +20,7 @@ section.selection-cards {
     margin-bottom: $space-xl;
     font-size: 3rem;
     font-weight: 500;
-    color: $black;
+    color: $white;
 }
 .selection-cards__group {
     display: flex;
