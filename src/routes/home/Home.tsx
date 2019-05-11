@@ -10,43 +10,50 @@ export interface HomeProps {}
 
 const Home: React.SFC<HomeProps> = () => {
   return (
-    <div>
+    <>
       <section className="selection-cards">
-        {itemsPerRow(
-          selectionCardData.map(card => {
-            return cloneObjectWithKeyID(card);
-          }),
-          2,
-        ).map(row => {
-          return (
-            <div
-              key={row[0].keyID}
-              className="selection-cards__row"
-            >
-              {row.map(card => {
-                return (
-                  <SelectionCard
-                    key={card.keyID}
-                    description={card.description}
-                    extraInfo={
-                      card.extraInfo ? card.extraInfo : null
-                    }
-                    iconElement={
-                      <i
-                        className={card.iconClassName}
-                        slot="icon"
-                      />
-                    }
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
+        <h2 className="selection-cards__header">
+          Tell us who you are!
+        </h2>
+        <div className="selection-cards__group">
+          {itemsPerRow(
+            selectionCardData.map(card => {
+              return cloneObjectWithKeyID(card);
+            }),
+            2,
+          ).map(row => {
+            return (
+              <div
+                key={row[0].keyID}
+                className="selection-cards__row"
+              >
+                {row.map(card => {
+                  return (
+                    <SelectionCard
+                      key={card.keyID}
+                      description={card.description}
+                      extraInfo={
+                        card.extraInfo
+                          ? card.extraInfo
+                          : null
+                      }
+                      iconElement={
+                        <i
+                          className={card.iconClassName}
+                          slot="icon"
+                        />
+                      }
+                    />
+                  );
+                })}
+              </div>
+            );
+          })}
 
-        {/* client, country manager, board member */}
+          {/* client, country manager, board member */}
+        </div>
       </section>
-    </div>
+    </>
   );
 };
 
