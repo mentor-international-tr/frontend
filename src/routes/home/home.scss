@@ -6,6 +6,9 @@ section.selection-cards {
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    @media screen and (max-width: $tablet) {
+        margin-top: $space-xl;
+    }
 }
 .selection-cards__row {
     display: flex;
@@ -15,7 +18,13 @@ section.selection-cards {
         margin-right: $space-xl;
     }
     @media screen and (max-width: $tablet) {
-        flex-direction: column;
+        & {
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+        & > .selection-card {
+            margin-bottom: $space-xl;
+        }
     }
 }
 
