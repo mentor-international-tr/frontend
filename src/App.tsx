@@ -4,6 +4,7 @@ import {
   Home,
   CreateGroup,
   JoinOrganization,
+  Dashboard,
 } from "./route-components/index";
 import { GlobalContext } from "./context/GlobalContext";
 //How CRA uses environment variables
@@ -22,6 +23,11 @@ const App: React.FC = () => {
           exact
           path="/join-organization"
           component={JoinOrganization}
+        />
+        <Route
+          exact
+          path="/dashboard"
+          component={Dashboard}
         />
       </GlobalContext.Provider>
     </div>
