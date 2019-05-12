@@ -1,0 +1,6 @@
+*.test.tsx
+*.d.ts
+node_modules
+data
+README.md
+serviceWorker.ts

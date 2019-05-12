@@ -25,7 +25,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier \"**/*.+(js|jsx|yml|yaml|ts|tsx|css|md|mdx|less)\"",
+    "format": "npm run prettier -- --write",
+    "validate": "npm run prettier -- --list-different"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +47,7 @@
   },
   "devDependencies": {
     "jest-dom": "^3.2.2",
+    "prettier": "^1.17.0",
     "react-testing-library": "^7.0.0"
   }
 }
