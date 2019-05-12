@@ -26,7 +26,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   resetTranscript,
   browserSupportsSpeechRecognition,
 }) => {
-  console.log(transcript);
+  // console.log(transcript);
   const [isMicOn, setIsMicOn] = useState(false);
   return (
     <Paper
