@@ -11,18 +11,18 @@ const JoinOrganization: React.SFC<JoinOrganizationProps> = () => {
   const searchOrganizations = () => {
     console.log(searchText);
   };
-  const activateMicrophone = () => {
-    console.log("microhpone");
-  };
+
   return (
     <Card className="join-org-card">
       <CardContent>
         <h2>What's the name of your organization?</h2>
-        <SearchBox
-          setSearchText={setSearchText}
-          searchHandler={searchOrganizations}
-          microphoneHandler={activateMicrophone}
-        />
+        <form>
+          <SearchBox
+            searchText={searchText}
+            setSearchText={setSearchText}
+            searchHandler={searchOrganizations}
+          />
+        </form>
       </CardContent>
     </Card>
   );
