@@ -3,7 +3,7 @@ import "./selection-card.scss";
 export interface SelectionCardProps {
   iconElement: React.ReactElement;
   description: string;
-  extraInfo: string;
+  extraInfo?: string;
   className?: string;
 }
 
@@ -15,7 +15,9 @@ const SelectionCard: React.SFC<SelectionCardProps> = ({
   return (
     <button className="selection-card">
       <div className="selection-card__icon-container">
-        {React.cloneElement(iconElement)}
+        {React.cloneElement(iconElement, {
+          "data-testid": "main-icon",
+        })}
       </div>
       {description ? (
         <h2 className="selection-card__description">
