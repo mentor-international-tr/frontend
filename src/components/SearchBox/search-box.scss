@@ -1,0 +1,14 @@
+@import "../../lib/styles/variables.scss";
+.search-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+}
+
+.search-container__search-box {
+    width: 100%;
+}
+
+.search-container__mic--on {
+    border: 2px solid $light-blue;
+}
