@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test <SearchBox /> creates snapshots 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root-1 MuiPaper-elevation1-4 MuiPaper-rounded-2 search-container "
+  >
+    <button
+      aria-label="Search"
+      class="MuiButtonBase-root-34 MuiIconButton-root-28"
+      data-testid="search-icon-button"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiIconButton-label-33"
+      >
+        <i
+          class="fas fa-search"
+        />
+      </span>
+      <span
+        class="MuiTouchRipple-root-54"
+      />
+    </button>
+    <div
+      class="MuiInputBase-root-37 search-container__search-box"
+      data-testid="search-box"
+    >
+      <input
+        class="MuiInputBase-input-47"
+        placeholder="Enter Organization Name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test <SearchBox /> creates snapshots 2`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root-1 MuiPaper-elevation1-4 MuiPaper-rounded-2 search-container "
+  >
+    <button
+      aria-label="Search"
+      class="MuiButtonBase-root-34 MuiIconButton-root-28"
+      data-testid="search-icon-button"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiIconButton-label-33"
+      >
+        <i
+          class="fas fa-search"
+        />
+      </span>
+      <span
+        class="MuiTouchRipple-root-54"
+      />
+    </button>
+    <div
+      class="MuiInputBase-root-37 search-container__search-box"
+      data-testid="search-box"
+    >
+      <input
+        class="MuiInputBase-input-47"
+        placeholder="Enter Organization Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      aria-label="Search By Microphone"
+      class="MuiButtonBase-root-34 MuiIconButton-root-28"
+      data-testid="mic-icon-button"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiIconButton-label-33"
+      >
+        <i
+          class="fas fa-microphone"
+        />
+      </span>
+      <span
+        class="MuiTouchRipple-root-54"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;
