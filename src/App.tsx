@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import {
   Home,
   CreateGroup,
+  JoinOrganization,
 } from "./route-components/index";
 
 //How CRA uses environment variables
@@ -15,6 +16,11 @@ const App: React.FC = () => {
         exact
         path="/create-group"
         component={CreateGroup}
+      />
+      <Route
+        exact
+        path="/join-organization"
+        component={JoinOrganization}
       />
     </div>
   );
