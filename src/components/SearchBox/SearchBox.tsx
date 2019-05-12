@@ -43,6 +43,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
     >
       <IconButton
         aria-label="Search"
+        data-testid="search-icon-button"
         onClick={() => {
           searchHandler();
         }}
@@ -56,6 +57,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             : "Enter Organization Name"
         }`}
         className="search-container__search-box"
+        data-testid="search-box"
         value={isMicOn ? transcript : searchText}
         onChange={e => {
           if (isMicOn) {
@@ -73,6 +75,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       {browserSupportsSpeechRecognition && !isMicOn ? (
         <IconButton
           aria-label="Search By Microphone"
+          data-testid="mic-icon-button"
           onClick={() => {
             if (onMicStartHandler) {
               onMicStartHandler();
@@ -88,6 +91,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       {browserSupportsSpeechRecognition && isMicOn ? (
         <IconButton
           aria-label="Clear search box and exit microphone mode"
+          data-testid="x-icon-button"
           onClick={() => {
             if (onMicEndHandler) {
               onMicEndHandler();

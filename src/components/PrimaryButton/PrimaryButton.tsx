@@ -22,6 +22,7 @@ const PrimaryButton: any = (props: any) => {
     <Button
       className={classNames(classes.root, className)}
       {...other}
+      data-testid="primary-button"
     >
       {children}
     </Button>
