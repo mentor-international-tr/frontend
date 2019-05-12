@@ -11,7 +11,8 @@ export interface SearchBoxProps {
   setSearchText: Function;
   searchText: Function;
   searchHandler: Function;
-  microphoneHandler: Function;
+  onMicStartHandler?: Function;
+  onMicEndHandler?: Function;
   transcript: string;
   resetTranscript: Function;
   browserSupportsSpeechRecognition: boolean;
@@ -21,7 +22,8 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   setSearchText,
   searchText,
   searchHandler,
-  microphoneHandler,
+  onMicStartHandler,
+  onMicEndHandler,
   transcript,
   resetTranscript,
   browserSupportsSpeechRecognition,
@@ -68,7 +70,9 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
         <IconButton
           aria-label="Search By Microphone"
           onClick={() => {
-            microphoneHandler();
+            if (onMicStartHandler) {
+              onMicStartHandler();
+            }
             setIsMicOn(true);
           }}
         >
@@ -79,6 +83,9 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
         <IconButton
           aria-label="Clear search box and exit microphone mode"
           onClick={() => {
+            if (onMicEndHandler) {
+              onMicEndHandler();
+            }
             setIsMicOn(false);
             resetTranscript();
           }}
