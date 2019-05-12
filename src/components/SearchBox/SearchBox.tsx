@@ -13,6 +13,8 @@ export interface SearchBoxProps {
   searchHandler: Function;
   onMicStartHandler?: Function;
   onMicEndHandler?: Function;
+  startListening: Function;
+  abortListening: Function;
   transcript: string;
   resetTranscript: Function;
   browserSupportsSpeechRecognition: boolean;
@@ -24,6 +26,8 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   searchHandler,
   onMicStartHandler,
   onMicEndHandler,
+  startListening,
+  abortListening,
   transcript,
   resetTranscript,
   browserSupportsSpeechRecognition,
@@ -73,6 +77,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             if (onMicStartHandler) {
               onMicStartHandler();
             }
+            startListening();
             setIsMicOn(true);
             resetTranscript();
           }}
@@ -87,6 +92,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             if (onMicEndHandler) {
               onMicEndHandler();
             }
+            abortListening();
             setIsMicOn(false);
             resetTranscript();
           }}
@@ -98,4 +104,6 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   );
 };
 
-export default SpeechRecognition(SearchBox);
+export default SpeechRecognition({ autoStart: false })(
+  SearchBox,
+);
