@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing <PrimaryButton /> component creates snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="MuiButtonBase-root-28 MuiButton-root-2 MuiButton-text-4 MuiButton-flat-7 PrimaryButton-root-1"
+    data-testid="primary-button"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label-3"
+    >
+      I am text
+    </span>
+    <span
+      class="MuiTouchRipple-root-31"
+    />
+  </button>
+</DocumentFragment>
+`;
