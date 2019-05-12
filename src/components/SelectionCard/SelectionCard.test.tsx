@@ -14,9 +14,7 @@ describe("testing <SelectionCard /> component", () => {
         iconElement={
           <i className="fas fa-chalkboard-teacher" />
         }
-      >
-        I am text
-      </SelectionCard>,
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
 
@@ -26,9 +24,7 @@ describe("testing <SelectionCard /> component", () => {
         iconElement={
           <i className="fas fa-chalkboard-teacher" />
         }
-      >
-        I am text
-      </SelectionCard>,
+      />,
     );
     expect(asFragment()).toMatchSnapshot();
   });
