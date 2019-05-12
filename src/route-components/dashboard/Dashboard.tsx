@@ -1,3 +1,4 @@
+import "./dashboard.scss";
 import React from "react";
 export interface DashboardProps {}
 
