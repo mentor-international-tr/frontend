@@ -5,7 +5,7 @@
   "insertPragma": false,
   "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
-  "parser": "babylon",
+  "parser": "babel",
   "printWidth": 60,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
