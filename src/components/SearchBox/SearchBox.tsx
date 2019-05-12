@@ -74,6 +74,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
               onMicStartHandler();
             }
             setIsMicOn(true);
+            resetTranscript();
           }}
         >
           <i className="fas fa-microphone" />
