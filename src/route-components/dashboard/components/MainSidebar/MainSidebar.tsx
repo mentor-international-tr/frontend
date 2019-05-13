@@ -1,3 +1,4 @@
+import "./main-sidebar.scss";
 import React from "react";
 import {
   Paper,

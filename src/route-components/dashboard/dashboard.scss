@@ -1,25 +1,5 @@
-@import "../../lib/styles/variables.scss";
+@import "src/lib/styles/variables.scss";
 
-.main-sidebar {
-    max-width: 400px;
-    height: 100vh;
-}
-.main-sidebar__header {
+.dashboard-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2.4em;
-}
-
-.sidebar-header__text-content {
-    margin-left: $space-xl;
-    & > h2, & > p {
-        margin: 0;
-    }
-}
-
-.main-sidebar__content {
-    display: flex;
-    flex-direction: column;
-    padding: 2.4em;
 }
