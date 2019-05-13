@@ -1,0 +1,27 @@
+@import "src/lib/styles/variables.scss";
+
+.starter-content {
+    position: relative;
+    width: 100%;
+}
+.starter-content__img {
+    width: 100%;
+    height: 100vh;
+    background: url("../../images/group.jpg");
+    filter: brightness(70%);
+    @media screen and (max-width: $tablet) {
+        height: 100%;
+    }
+}
+.starter-cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+.starter-cta__text {
+    color: $white;
+}

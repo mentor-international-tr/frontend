@@ -6,3 +6,7 @@ export {
 export {
   default as JoinOrganization,
 } from "./join-organization/JoinOrganization";
+
+export {
+  default as Dashboard,
+} from "./dashboard/Dashboard";
