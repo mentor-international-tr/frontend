@@ -1,0 +1,11 @@
+@import "src/lib/styles/variables.scss";
+
+.mi-navbar__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+}
+
+.mi-navbar__list-item {
+    list-style: none;
+}

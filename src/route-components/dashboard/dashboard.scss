@@ -1,5 +1,29 @@
 @import "src/lib/styles/variables.scss";
-
+.dashboard-main-content {
+    width: 100%;
+}
 .dashboard-container {
     display: flex;
+    width: 100%;
+    // background: lightblue;
+}
+.dashboard-header {
+    display: flex;
+    align-items: center;
+    padding: $space-xl;
+}
+.dashboard-header__text-content {
+    margin-left: $space-xl;
+    & > h2, & > p {
+        margin: 0;
+    }
+}
+.dashboard-header__buttons {
+    margin: 0 0 0 auto;
+    & > * {
+        margin-right: $space-md;
+    }
+    & > *:last-child {
+        margin-right: 0;
+    }
 }

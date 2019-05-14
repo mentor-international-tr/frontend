@@ -1,7 +1,6 @@
 import "./starter-content.scss";
 import React from "react";
 import groupImage from "../../images/group.jpg";
-//@ts-ignore
 import PrimaryButton from "components/PrimaryButton/PrimaryButton";
 export interface StarterContentProps {}
 

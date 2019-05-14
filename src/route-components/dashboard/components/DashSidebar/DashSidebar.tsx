@@ -1,4 +1,4 @@
-import "./main-sidebar.scss";
+import "./dash-sidebar.scss";
 import React from "react";
 import {
   Paper,
@@ -11,13 +11,13 @@ import {
   ListItemText,
 } from "@material-ui/core";
 
-export interface MainSidebarProps {}
+export interface DashSidebarProps {}
 
-const MainSidebar: React.SFC<MainSidebarProps> = () => {
+const DashSidebar: React.SFC<DashSidebarProps> = () => {
   return (
-    <Paper square elevation={2} className="main-sidebar">
+    <Paper square elevation={2} className="dash-sidebar">
       {/* TODO: GET Name data for avatar initials */}
-      <header className="main-sidebar__header">
+      <header className="dash-sidebar__header">
         <Avatar className="sidebar-header__avatar">
           S
         </Avatar>
@@ -29,7 +29,7 @@ const MainSidebar: React.SFC<MainSidebarProps> = () => {
         </div>
       </header>
       <Divider />
-      <section className="main-sidebar__content">
+      <section className="dash-sidebar__content">
         <List
           className="content__list"
           component="ul"
@@ -87,4 +87,4 @@ const MainSidebar: React.SFC<MainSidebarProps> = () => {
   );
 };
 
-export default MainSidebar;
+export default DashSidebar;
