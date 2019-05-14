@@ -23,10 +23,10 @@
 }
 .dashboard-header__buttons {
     margin: 0 0 0 auto;
-    & > * {
+    & > button {
         margin-right: $space-md;
     }
-    & > *:last-child {
+    & > button:last-child {
         margin-right: 0;
     }
     @media screen and (max-width: $tablet) {
@@ -38,6 +38,7 @@
         display: none;
     }
 }
+
 .dashboard-footer {
     position: fixed;
     left: 0;

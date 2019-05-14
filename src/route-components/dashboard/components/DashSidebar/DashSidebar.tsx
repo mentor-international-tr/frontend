@@ -106,7 +106,8 @@ const DashSidebar: React.SFC<DashSidebarProps> = ({
           className="footer-sidebar__close-btn"
           color="primary"
         >
-          {`<- Close Sidebar`}
+          <i className="fas fa-arrow-left" />
+          Close Sidebar
         </Button>
       </footer>
     </Paper>

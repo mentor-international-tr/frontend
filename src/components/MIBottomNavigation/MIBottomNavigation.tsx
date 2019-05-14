@@ -4,7 +4,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import PropTypes from "prop-types";
-import React, { useState, SyntheticEvent } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 
 const styles = {

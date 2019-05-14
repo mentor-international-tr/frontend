@@ -1,7 +1,12 @@
 import "./main-content.scss";
 import React, { useState } from "react";
 import Navbar from "components/Navbar/Navbar";
-import { Avatar, Divider } from "@material-ui/core";
+import {
+  Avatar,
+  Divider,
+  Button,
+  IconButton,
+} from "@material-ui/core";
 import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 
 export interface MainContentProps {
@@ -17,6 +22,7 @@ const MainContent: React.SFC<MainContentProps> = ({
   const [activeNavText, setActiveNavText] = useState(
     MESSAGES,
   );
+  console.log(activeNavText);
   return (
     <div className="dashboard-main-content">
       <header className="dashboard-header">
@@ -28,12 +34,19 @@ const MainContent: React.SFC<MainContentProps> = ({
           <p>@peru1</p>
         </div>
         <div className="dashboard-header__buttons">
-          <button className="dashboard-header__btn-contacts">
+          <Button
+            variant="outlined"
+            color="primary"
+            className="dashboard-header__btn-contacts"
+          >
             Add Contacts
-          </button>
-          <button className="dashboard-header__btn-settings">
+          </Button>
+          <IconButton
+            className="dashboard-header__btn-settings"
+            aria-label="Go to Settings"
+          >
             <i className="fas fa-cog" />
-          </button>
+          </IconButton>
         </div>
       </header>
       <Navbar
@@ -52,18 +65,23 @@ const MainContent: React.SFC<MainContentProps> = ({
         ]}
       />
       <Divider />
-      <main />
+      <main className="dashboard-main">
+        {/* <MessagesSection />
+        <TemplatesSection />
+        <PeopleSection /> */}
+        <Button
+          className="dashboard-main__mobile-side-open-btn"
+          onClick={() => setIsSidebarOpen(true)}
+          variant="outlined"
+        >
+          Open Sidebar
+        </Button>
+      </main>
+
       <footer className="dashboard-footer">
         <MIBottomNavigation
           className="dashboard-footer__mobile-nav"
           navItems={[
-            {
-              label: "Sidebar",
-              icon: <i className="fas fa-bars" />,
-              clickHandler: () => {
-                setIsSidebarOpen(true);
-              },
-            },
             {
               label: MESSAGES,
               icon: <i className="fas fa-envelope" />,
