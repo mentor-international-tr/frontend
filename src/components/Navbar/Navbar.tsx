@@ -9,21 +9,29 @@ interface NavItem {
 }
 export interface NavbarProps {
   navItems: NavItem[];
+  setText: Function;
 }
 
-const Navbar: React.SFC<NavbarProps> = ({ navItems }) => {
-  const [activeItem, setActiveItem] = useState("0");
+const Navbar: React.SFC<NavbarProps> = ({
+  navItems,
+  setText,
+}) => {
+  const [activeItemText, setActiveItemText] = useState(
+    navItems[0].text,
+  );
   return (
     <nav className="mi-navbar">
       <ul
         className="mi-navbar__list"
         onClick={(e: any) => {
-          if (e.target.dataset["navItem"]) {
-            setActiveItem(e.target.dataset["navItem"]);
+          const text = e.target.dataset["navItem"];
+          if (text) {
+            setText(text);
+            setActiveItemText(text);
           }
         }}
       >
-        {navItems.map((item: NavItem, i: number) => {
+        {navItems.map((item: NavItem) => {
           return (
             <li
               key={uuidv4()}
@@ -32,14 +40,16 @@ const Navbar: React.SFC<NavbarProps> = ({ navItems }) => {
               <TextButton
                 btnProps={{
                   color: `${
-                    activeItem === `${i}`
+                    activeItemText === item.text
                       ? "primary"
                       : "default"
                   }`,
-                  "data-nav-item": i,
+                  "data-nav-item": item.text,
                 }}
               >
-                <span data-nav-item={i}>{item.text}</span>
+                <span data-nav-item={item.text}>
+                  {item.text}
+                </span>
               </TextButton>
             </li>
           );

@@ -13,7 +13,7 @@ exports[`testing <Navbar /> component creates snapshot 1`] = `
       >
         <button
           class="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-textPrimary-6 MuiButton-flat-8 MuiButton-flatPrimary-9 TextButton-button-1"
-          data-nav-item="0"
+          data-nav-item="Messages"
           tabindex="0"
           type="button"
         >
@@ -21,7 +21,7 @@ exports[`testing <Navbar /> component creates snapshot 1`] = `
             class="MuiButton-label-4"
           >
             <span
-              data-nav-item="0"
+              data-nav-item="Messages"
             >
               Messages
             </span>
@@ -36,7 +36,7 @@ exports[`testing <Navbar /> component creates snapshot 1`] = `
       >
         <button
           class="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8 TextButton-button-1"
-          data-nav-item="1"
+          data-nav-item="Templates"
           tabindex="0"
           type="button"
         >
@@ -44,7 +44,7 @@ exports[`testing <Navbar /> component creates snapshot 1`] = `
             class="MuiButton-label-4"
           >
             <span
-              data-nav-item="1"
+              data-nav-item="Templates"
             >
               Templates
             </span>
