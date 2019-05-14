@@ -4,16 +4,19 @@ import Navbar from "components/Navbar/Navbar";
 import { Avatar, Divider } from "@material-ui/core";
 import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 
-export interface MainContentProps {}
+export interface MainContentProps {
+  setIsSidebarOpen: Function;
+}
 
-const MainContent: React.SFC<MainContentProps> = () => {
+const MainContent: React.SFC<MainContentProps> = ({
+  setIsSidebarOpen,
+}) => {
   const MESSAGES = "Messages";
   const TEMPLATES = "Templates";
   const PEOPLE = "People";
   const [activeNavText, setActiveNavText] = useState(
     MESSAGES,
   );
-  console.log(activeNavText);
   return (
     <div className="dashboard-main-content">
       <header className="dashboard-header">
@@ -57,22 +60,30 @@ const MainContent: React.SFC<MainContentProps> = () => {
             {
               label: "Sidebar",
               icon: <i className="fas fa-bars" />,
-              clickHandler: () => {},
+              clickHandler: () => {
+                setIsSidebarOpen(true);
+              },
             },
             {
               label: MESSAGES,
               icon: <i className="fas fa-envelope" />,
-              clickHandler: () => {},
+              clickHandler: () => {
+                setActiveNavText(MESSAGES);
+              },
             },
             {
               label: TEMPLATES,
               icon: <i className="fas fa-columns" />,
-              clickHandler: () => {},
+              clickHandler: () => {
+                setActiveNavText(TEMPLATES);
+              },
             },
             {
               label: PEOPLE,
               icon: <i className="fas fa-users" />,
-              clickHandler: () => {},
+              clickHandler: () => {
+                setActiveNavText(PEOPLE);
+              },
             },
           ]}
         />

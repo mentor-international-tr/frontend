@@ -9,13 +9,28 @@ import {
   ListSubheader,
   ListItemIcon,
   ListItemText,
+  Button,
 } from "@material-ui/core";
 
-export interface DashSidebarProps {}
+export interface DashSidebarProps {
+  isOpen?: boolean;
+  setIsOpen: Function;
+}
 
-const DashSidebar: React.SFC<DashSidebarProps> = () => {
+const DashSidebar: React.SFC<DashSidebarProps> = ({
+  isOpen,
+  setIsOpen,
+}) => {
   return (
-    <Paper square elevation={2} className="dash-sidebar">
+    <Paper
+      square
+      elevation={2}
+      className={`dash-sidebar ${
+        isOpen
+          ? `dash-sidebar--open`
+          : `dash-sidebar--close`
+      }`}
+    >
       {/* TODO: GET Name data for avatar initials */}
       <header className="dash-sidebar__header">
         <Avatar className="sidebar-header__avatar">
@@ -83,6 +98,17 @@ const DashSidebar: React.SFC<DashSidebarProps> = () => {
           {/* TODO: Fetch Groups belonging to this organization */}
         </List>
       </section>
+      <footer className="footer-sidebar">
+        <Button
+          onClick={() => {
+            setIsOpen(false);
+          }}
+          className="footer-sidebar__close-btn"
+          color="primary"
+        >
+          {`<- Close Sidebar`}
+        </Button>
+      </footer>
     </Paper>
   );
 };
