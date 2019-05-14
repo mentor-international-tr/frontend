@@ -1,10 +1,10 @@
 @import "../../../../lib/styles/variables.scss";
 
-.main-sidebar {
+.dash-sidebar {
     max-width: 400px;
     height: 100vh;
 }
-.main-sidebar__header {
+.dash-sidebar__header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
     }
 }
 
-.main-sidebar__content {
+.dash-sidebar__content {
     display: flex;
     flex-direction: column;
     padding: 2.4em;

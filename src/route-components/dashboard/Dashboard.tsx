@@ -1,6 +1,5 @@
 import "./dashboard.scss";
-import React, { useState } from "react";
-import MainSidebar from "./components/MainSidebar/MainSidebar";
+import DashSidebar from "./components/DashSidebar/DashSidebar";
 import StarterContent from "./components/StartingContent/StarterContent";
 import MainContent from "./components/MainContent/MainContent";
 
@@ -10,7 +9,7 @@ const Dashboard: React.SFC<DashboardProps> = () => {
   const [hasFirstGroup, setHasFirstGroup] = useState(true);
   return (
     <div className="dashboard-container">
-      <MainSidebar />
+      <DashSidebar />
       {hasFirstGroup ? <MainContent /> : <StarterContent />}
     </div>
   );
