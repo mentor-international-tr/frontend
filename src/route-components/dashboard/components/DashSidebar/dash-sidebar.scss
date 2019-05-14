@@ -1,8 +1,11 @@
-@import "../../../../lib/styles/variables.scss";
+@import "src/lib/styles/variables.scss";
 
 .dash-sidebar {
     max-width: 400px;
     height: 100vh;
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
 }
 .dash-sidebar__header {
     display: flex;
@@ -11,7 +14,7 @@
     padding: 2.4em;
 }
 
-.sidebar-header__text-content {
+.dash-sidebar-header__text-content {
     margin-left: $space-xl;
     & > h2, & > p {
         margin: 0;

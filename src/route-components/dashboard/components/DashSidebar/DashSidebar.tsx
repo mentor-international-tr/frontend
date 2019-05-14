@@ -22,7 +22,7 @@ const DashSidebar: React.SFC<DashSidebarProps> = () => {
           S
         </Avatar>
 
-        <div className="sidebar-header__text-content">
+        <div className="dash-sidebar-header__text-content">
           <p>Hello,</p>
           {/* TODO: GET Name data to replace Simon */}
           <h2>Simon</h2>

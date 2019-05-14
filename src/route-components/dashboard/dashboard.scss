@@ -6,6 +6,9 @@
     display: flex;
     width: 100%;
     // background: lightblue;
+    @media screen and (max-width: $tablet) {
+        height: 100vh;
+    }
 }
 .dashboard-header {
     display: flex;
