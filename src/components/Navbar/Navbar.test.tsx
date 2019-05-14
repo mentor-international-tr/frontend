@@ -9,11 +9,7 @@ afterEach(cleanup);
 describe("testing <Navbar /> component", () => {
   it("creates snapshot", () => {
     const { asFragment, rerender } = render(
-      <Navbar>
-          <TextButton>Message</TextButton>
-          <TextButton>Templates</TextButton>
-          <TextButton>People</TextButton>
-      </Navbar>,
+      <Navbar navItems= {[{ text: "Messages"}, {text: "Templates"}]}/>
     );
     expect(asFragment()).toMatchSnapshot();
     })

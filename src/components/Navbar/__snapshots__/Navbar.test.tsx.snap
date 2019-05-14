@@ -12,14 +12,19 @@ exports[`testing <Navbar /> component creates snapshot 1`] = `
         class="mi-navbar__list-item"
       >
         <button
-          class="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8 TextButton-button-1"
+          class="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-textPrimary-6 MuiButton-flat-8 MuiButton-flatPrimary-9 TextButton-button-1"
+          data-nav-item="0"
           tabindex="0"
           type="button"
         >
           <span
             class="MuiButton-label-4"
           >
-            Message
+            <span
+              data-nav-item="0"
+            >
+              Messages
+            </span>
           </span>
           <span
             class="MuiTouchRipple-root-32"
@@ -31,31 +36,18 @@ exports[`testing <Navbar /> component creates snapshot 1`] = `
       >
         <button
           class="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8 TextButton-button-1"
+          data-nav-item="1"
           tabindex="0"
           type="button"
         >
           <span
             class="MuiButton-label-4"
           >
-            Templates
-          </span>
-          <span
-            class="MuiTouchRipple-root-32"
-          />
-        </button>
-      </li>
-      <li
-        class="mi-navbar__list-item"
-      >
-        <button
-          class="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8 TextButton-button-1"
-          tabindex="0"
-          type="button"
-        >
-          <span
-            class="MuiButton-label-4"
-          >
-            People
+            <span
+              data-nav-item="1"
+            >
+              Templates
+            </span>
           </span>
           <span
             class="MuiTouchRipple-root-32"

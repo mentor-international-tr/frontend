@@ -1,4 +1,4 @@
-import React from "react";
+import React, { isValidElement } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -14,7 +14,7 @@ const styles = (theme: any) => ({
 
 export interface TextButtonProps {
   classes: any;
-  children: React.ReactChild;
+  children: React.ReactElement | string;
   btnProps?: object;
 }
 
@@ -25,7 +25,9 @@ const TextButton: React.SFC<TextButtonProps> = ({
 }) => {
   return (
     <Button className={classes.button} {...btnProps}>
-      {children}
+      {isValidElement(children)
+        ? React.cloneElement(children)
+        : children}
     </Button>
   );
 };
