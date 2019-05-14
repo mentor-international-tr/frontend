@@ -9,17 +9,19 @@ interface NavItem {
 export interface NavbarProps {
   navItems: NavItem[];
   setText: Function;
+  className?: string;
 }
 
 const Navbar: React.SFC<NavbarProps> = ({
   navItems,
   setText,
+  className,
 }) => {
   const [activeItemText, setActiveItemText] = useState(
     navItems[0].text,
   );
   return (
-    <nav className="mi-navbar">
+    <nav className={`mi-navbar ${className}`}>
       <ul
         className="mi-navbar__list"
         onClick={(e: any) => {

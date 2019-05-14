@@ -30,3 +30,17 @@
         margin-right: 0;
     }
 }
+.dashboard-nav {
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
+}
+.dashboard-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}

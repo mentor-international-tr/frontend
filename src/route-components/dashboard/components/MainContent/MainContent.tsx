@@ -2,7 +2,7 @@ import "./main-content.scss";
 import React, { useState } from "react";
 import Navbar from "components/Navbar/Navbar";
 import { Avatar, Divider } from "@material-ui/core";
-import PrimaryButton from "components/PrimaryButton/PrimaryButton";
+import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 
 export interface MainContentProps {}
 
@@ -34,6 +34,7 @@ const MainContent: React.SFC<MainContentProps> = () => {
         </div>
       </header>
       <Navbar
+        className="dashboard-nav"
         setText={setActiveNavText}
         navItems={[
           {
@@ -49,6 +50,33 @@ const MainContent: React.SFC<MainContentProps> = () => {
       />
       <Divider />
       <main />
+      <footer className="dashboard-footer">
+        <MIBottomNavigation
+          className="dashboard-footer__mobile-nav"
+          navItems={[
+            {
+              label: "Sidebar",
+              icon: <i className="fas fa-bars" />,
+              clickHandler: () => {},
+            },
+            {
+              label: MESSAGES,
+              icon: <i className="fas fa-envelope" />,
+              clickHandler: () => {},
+            },
+            {
+              label: TEMPLATES,
+              icon: <i className="fas fa-columns" />,
+              clickHandler: () => {},
+            },
+            {
+              label: PEOPLE,
+              icon: <i className="fas fa-users" />,
+              clickHandler: () => {},
+            },
+          ]}
+        />
+      </footer>
     </div>
   );
 };

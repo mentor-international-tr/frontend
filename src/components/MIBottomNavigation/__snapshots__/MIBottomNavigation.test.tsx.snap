@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing <MIBottomNavigation /> component creates snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBottomNavigation-root-2 MIBottomNavigation-root-1"
+  >
+    <button
+      class="MuiButtonBase-root-8 MuiBottomNavigationAction-root-3 MuiBottomNavigationAction-selected-4"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiBottomNavigationAction-wrapper-6"
+      >
+        <i
+          class=""
+        />
+        <span
+          class="MuiBottomNavigationAction-label-7 MuiBottomNavigationAction-selected-4"
+        >
+          Favorites
+        </span>
+      </span>
+      <span
+        class="MuiTouchRipple-root-11"
+      />
+    </button>
+    <button
+      class="MuiButtonBase-root-8 MuiBottomNavigationAction-root-3"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiBottomNavigationAction-wrapper-6"
+      >
+        <i
+          class=""
+        />
+        <span
+          class="MuiBottomNavigationAction-label-7"
+        >
+          Templates
+        </span>
+      </span>
+      <span
+        class="MuiTouchRipple-root-11"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;
