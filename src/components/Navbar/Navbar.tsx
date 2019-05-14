@@ -1,6 +1,5 @@
 import "./navbar.scss";
 import React, { useState } from "react";
-import uuidv4 from "uuid/v4";
 import TextButton from "components/TextButton/TextButton";
 
 interface NavItem {
@@ -34,7 +33,7 @@ const Navbar: React.SFC<NavbarProps> = ({
         {navItems.map((item: NavItem) => {
           return (
             <li
-              key={uuidv4()}
+              key={item.text}
               className="mi-navbar__list-item"
             >
               <TextButton
