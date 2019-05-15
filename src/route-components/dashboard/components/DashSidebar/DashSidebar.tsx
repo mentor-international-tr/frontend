@@ -11,6 +11,7 @@ import {
   ListItemText,
   Button,
 } from "@material-ui/core";
+import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 
 export interface DashSidebarProps {
   isOpen?: boolean;
@@ -99,6 +100,21 @@ const DashSidebar: React.SFC<DashSidebarProps> = ({
         </List>
       </section>
       <footer className="footer-sidebar">
+        <MIBottomNavigation
+          highlightNone
+          navItems={[
+            {
+              label: "Add Contacts",
+              icon: <i className="fas fa-address-book" />,
+              clickHandler: () => {},
+            },
+            {
+              label: "Settings",
+              icon: <i className="fas fa-cog" />,
+              clickHandler: () => {},
+            },
+          ]}
+        />
         <Button
           onClick={() => {
             setIsOpen(false);
