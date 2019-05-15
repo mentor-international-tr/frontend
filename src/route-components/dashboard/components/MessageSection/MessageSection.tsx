@@ -55,6 +55,7 @@ const MessageSection: React.SFC<MessageSectionProps> = () => {
             color="primary"
             variant="contained"
             className="chat-footer__send-btn"
+            type="submit"
           >
             Send
           </Button>
