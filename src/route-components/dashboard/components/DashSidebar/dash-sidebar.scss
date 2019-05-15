@@ -3,6 +3,7 @@
 .dash-sidebar {
     max-width: 400px;
     height: 100vh;
+    overflow: scroll;
     @media screen and (max-width: $tablet) {
         position: fixed;
         top: 0;
