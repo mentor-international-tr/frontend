@@ -11,6 +11,7 @@ import {
   BottomNavigationAction,
 } from "@material-ui/core";
 import MessageSection from "../MessageSection/MessageSection";
+import ScheduleSection from "../ScheduleSection/ScheduleSection";
 
 export interface MainContentProps {
   setIsSidebarOpen: Function;
@@ -24,7 +25,7 @@ const MainContent: React.SFC<MainContentProps> = ({
     1: "Schedules",
     2: "People",
   };
-  const [activeNavValue, setActiveNavValue] = useState(0);
+  const [activeNavValue, setActiveNavValue] = useState(1);
   const activeValChange = (event: any, value: number) => {
     setActiveNavValue(value);
   };
@@ -71,8 +72,10 @@ const MainContent: React.SFC<MainContentProps> = ({
         {tabs[0] === tabs[activeNavValue] ? (
           <MessageSection />
         ) : null}
-        {/* {activeNavText === TEMPLATES ? <TemplatesSection /> : null}
-        {activeNavText === PEOPLE ? <PeopleSection /> : null} */}
+        {tabs[1] === tabs[activeNavValue] ? (
+          <ScheduleSection />
+        ) : null}
+        {/* {activeNavText === PEOPLE ? <PeopleSection /> : null} */}
       </main>
 
       <footer className="dashboard-footer">

@@ -1,4 +1,4 @@
-import { Paper, InputBase } from "./SearchBoxStyles";
+import { MIPaper, MIInputBase } from "./SearchBoxStyles";
 import React from "react";
 import { IconButton } from "@material-ui/core";
 
@@ -36,7 +36,10 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   // console.log(transcript);
   const [isMicOn, setIsMicOn] = useState(false);
   return (
-    <Paper elevation={1} isMicOn={isMicOn}>
+    <MIPaper
+      elevation={1}
+      ismicon={isMicOn ? "true" : "false"}
+    >
       <IconButton
         aria-label="Search"
         data-testid="search-icon-button"
@@ -46,7 +49,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       >
         <i className="fas fa-search" />
       </IconButton>
-      <InputBase
+      <MIInputBase
         placeholder={`${
           isMicOn ? placeholderWhileMicOn : placeholder
         }`}
@@ -102,7 +105,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
           <i className="fas fa-times" />
         </IconButton>
       ) : null}
-    </Paper>
+    </MIPaper>
   );
 };
 
