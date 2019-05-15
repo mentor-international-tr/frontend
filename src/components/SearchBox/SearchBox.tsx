@@ -1,10 +1,8 @@
 import "./search-box.scss";
+import { Paper, InputBase } from "./SearchBoxStyles";
 import React from "react";
-import {
-  Paper,
-  IconButton,
-  InputBase,
-} from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+
 import SpeechRecognition from "react-speech-recognition";
 import { useState } from "react";
 export interface SearchBoxProps {
@@ -59,14 +57,14 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
         className="search-container__search-box"
         data-testid="search-box"
         value={isMicOn ? transcript : searchText}
-        onChange={e => {
+        onChange={(e: any) => {
           if (isMicOn) {
             setSearchText(transcript);
           } else {
             setSearchText(e.target.value);
           }
         }}
-        onKeyDown={e => {
+        onKeyDown={(e: any) => {
           if (e.keyCode === 13) {
             searchHandler();
           }
