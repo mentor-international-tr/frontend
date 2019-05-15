@@ -6,6 +6,8 @@ import {
   Divider,
   Button,
   IconButton,
+  BottomNavigation,
+  BottomNavigationAction,
 } from "@material-ui/core";
 import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 import MessageSection from "../MessageSection/MessageSection";
@@ -72,15 +74,6 @@ const MainContent: React.SFC<MainContentProps> = ({
         ) : null}
         {/* {activeNavText === TEMPLATES ? <TemplatesSection /> : null}
         {activeNavText === PEOPLE ? <PeopleSection /> : null} */}
-        <div className="dashboard-main__side-btns">
-          <Button
-            className="dashboard-main__mobile-side-open-btn"
-            onClick={() => setIsSidebarOpen(true)}
-            variant="outlined"
-          >
-            Open Sidebar
-          </Button>
-        </div>
       </main>
 
       <footer className="dashboard-footer">
@@ -110,6 +103,15 @@ const MainContent: React.SFC<MainContentProps> = ({
             },
           ]}
         />
+        <Button
+          variant="contained"
+          className="dashboard-footer__open-sidebar-btn"
+          onClick={() => {
+            setIsSidebarOpen(true);
+          }}
+        >
+          Open Sidebar
+        </Button>
       </footer>
     </div>
   );
