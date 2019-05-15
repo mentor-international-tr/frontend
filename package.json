@@ -10,6 +10,7 @@
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.3",
+    "@types/styled-components": "^4.1.15",
     "@types/uuid": "^3.4.4",
     "mi-components": "0.0.4",
     "node-sass": "^4.12.0",
