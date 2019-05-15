@@ -43,7 +43,7 @@ const MessageSection: React.SFC<MessageSectionProps> = () => {
             <ListItemText primary="Just working at the restaurant." />
           </ListItem>
         </List>
-        <footer className="chat-footer">
+        <form className="chat-msg-form">
           <SearchBox
             searchText={chatMsg}
             setSearchText={setChatMsg}
@@ -55,10 +55,11 @@ const MessageSection: React.SFC<MessageSectionProps> = () => {
             color="primary"
             variant="contained"
             className="chat-footer__send-btn"
+            type="submit"
           >
             Send
           </Button>
-        </footer>
+        </form>
       </section>
     </section>
   );

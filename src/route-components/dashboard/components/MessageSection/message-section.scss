@@ -27,7 +27,7 @@ section.chat {
     align-items: center;
     margin-bottom: $space-xl;
 }
-.chat-footer {
+.chat-msg-form {
     display: flex;
     & > * {
         margin-right: $space-sm;
