@@ -33,6 +33,14 @@
         display: none;
 }
 }
+
+.dashboard-main__side-btns {
+    position: fixed;
+    left: 0;
+    top: 70%;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+}
 .dashboard-nav {
     @media screen and (max-width: $tablet) {
         display: none;

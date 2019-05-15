@@ -69,13 +69,15 @@ const MainContent: React.SFC<MainContentProps> = ({
         {/* <MessagesSection />
         <TemplatesSection />
         <PeopleSection /> */}
-        <Button
-          className="dashboard-main__mobile-side-open-btn"
-          onClick={() => setIsSidebarOpen(true)}
-          variant="outlined"
-        >
-          Open Sidebar
-        </Button>
+        <div className="dashboard-main__side-btns">
+          <Button
+            className="dashboard-main__mobile-side-open-btn"
+            onClick={() => setIsSidebarOpen(true)}
+            variant="outlined"
+          >
+            Open Sidebar
+          </Button>
+        </div>
       </main>
 
       <footer className="dashboard-footer">
