@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import vars from "lib/styles/variables";
-import {
-  InputBase as MaterialInputBase,
-  Paper,
-} from "@material-ui/core";
+import { InputBase, Paper } from "@material-ui/core";
 
 const MIPaper = styled(Paper)`
   display: flex;
@@ -15,8 +12,8 @@ const MIPaper = styled(Paper)`
       : ""};
 `;
 
-const InputBase = styled(MaterialInputBase)`
+const MIInputBase = styled(InputBase)`
   width: 100%;
 `;
 
-export { MIPaper, InputBase };
+export { MIPaper, MIInputBase };

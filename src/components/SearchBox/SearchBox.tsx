@@ -1,4 +1,4 @@
-import { MIPaper, InputBase } from "./SearchBoxStyles";
+import { MIPaper, MIInputBase } from "./SearchBoxStyles";
 import React from "react";
 import { IconButton } from "@material-ui/core";
 
@@ -49,7 +49,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       >
         <i className="fas fa-search" />
       </IconButton>
-      <InputBase
+      <MIInputBase
         placeholder={`${
           isMicOn ? placeholderWhileMicOn : placeholder
         }`}
