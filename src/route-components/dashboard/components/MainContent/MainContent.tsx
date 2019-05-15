@@ -6,8 +6,6 @@ import {
   Divider,
   Button,
   IconButton,
-  BottomNavigation,
-  BottomNavigationAction,
 } from "@material-ui/core";
 import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 import MessageSection from "../MessageSection/MessageSection";
