@@ -1,5 +1,8 @@
 import React from "react";
-import "./selection-card.scss";
+import {
+  SelectionCard as SelectionButtonWrapper,
+  IconContainer,
+} from "./SelectionCardStyles";
 export interface SelectionCardProps {
   iconElement: React.ReactElement;
   description: string;
@@ -13,12 +16,12 @@ const SelectionCard: React.SFC<SelectionCardProps> = ({
   extraInfo,
 }) => {
   return (
-    <button className="selection-card">
-      <div className="selection-card__icon-container">
+    <SelectionButtonWrapper className="selection-card">
+      <IconContainer className="selection-card__icon-container">
         {React.cloneElement(iconElement, {
           "data-testid": "main-icon",
         })}
-      </div>
+      </IconContainer>
       {description ? (
         <h2 className="selection-card__description">
           {description}
@@ -29,7 +32,7 @@ const SelectionCard: React.SFC<SelectionCardProps> = ({
           {extraInfo}
         </p>
       ) : null}
-    </button>
+    </SelectionButtonWrapper>
   );
 };
 
