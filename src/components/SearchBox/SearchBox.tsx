@@ -1,4 +1,3 @@
-import "./search-box.scss";
 import { Paper, InputBase } from "./SearchBoxStyles";
 import React from "react";
 import { IconButton } from "@material-ui/core";
@@ -33,12 +32,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   // console.log(transcript);
   const [isMicOn, setIsMicOn] = useState(false);
   return (
-    <Paper
-      elevation={1}
-      className={`search-container ${
-        isMicOn ? "search-container__mic--on" : ""
-      }`}
-    >
+    <Paper elevation={1} isMicOn={isMicOn}>
       <IconButton
         aria-label="Search"
         data-testid="search-icon-button"
