@@ -21,16 +21,23 @@ export interface MIBottomNavigation {
   classes: any;
   className?: string;
   navItems: NavItem[];
+  highlightNone?: boolean;
 }
 
 const MIBottomNavigation: React.SFC<MIBottomNavigation> = ({
   classes,
   className,
   navItems,
+  highlightNone,
 }) => {
-  const [value, setValue] = useState(0);
-  console.log(className);
+  const [value, setValue] = useState(
+    highlightNone ? -1 : 0,
+  );
+
   const handleChange = (event: any, newValue: number) => {
+    if (highlightNone) {
+      return;
+    }
     setValue(newValue);
   };
   return (
