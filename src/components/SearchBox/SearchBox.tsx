@@ -52,10 +52,14 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
         }`}
         className="search-container__search-box"
         data-testid="search-box"
-        value={isMicOn ? transcript : searchText}
+        value={
+          isMicOn
+            ? `${searchText} ${transcript}`
+            : searchText
+        }
         onChange={(e: any) => {
           if (isMicOn) {
-            setSearchText(transcript);
+            setSearchText(`${searchText} ${transcript}`);
           } else {
             setSearchText(e.target.value);
           }
@@ -76,7 +80,6 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             }
             startListening();
             setIsMicOn(true);
-            resetTranscript();
           }}
         >
           <i className="fas fa-microphone" />
@@ -90,6 +93,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             if (onMicEndHandler) {
               onMicEndHandler();
             }
+            setSearchText(`${searchText} ${transcript}`);
             abortListening();
             setIsMicOn(false);
             resetTranscript();
