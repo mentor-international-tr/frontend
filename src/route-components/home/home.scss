@@ -41,9 +41,6 @@ section.selection-cards {
     & > .selection-card {
         margin-right: $space-xl;
     }
-    & > .selection-card {
-        background: $light-grey;
-    }
     @media screen and (max-width: $tablet) {
         & {
             flex-direction: column;

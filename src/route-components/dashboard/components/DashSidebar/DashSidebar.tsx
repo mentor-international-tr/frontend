@@ -9,20 +9,36 @@ import {
   ListSubheader,
   ListItemIcon,
   ListItemText,
+  Button,
 } from "@material-ui/core";
+import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 
-export interface DashSidebarProps {}
+export interface DashSidebarProps {
+  isOpen?: boolean;
+  setIsOpen: Function;
+}
 
-const DashSidebar: React.SFC<DashSidebarProps> = () => {
+const DashSidebar: React.SFC<DashSidebarProps> = ({
+  isOpen,
+  setIsOpen,
+}) => {
   return (
-    <Paper square elevation={2} className="dash-sidebar">
+    <Paper
+      square
+      elevation={2}
+      className={`dash-sidebar ${
+        isOpen
+          ? `dash-sidebar--open`
+          : `dash-sidebar--close`
+      }`}
+    >
       {/* TODO: GET Name data for avatar initials */}
       <header className="dash-sidebar__header">
         <Avatar className="sidebar-header__avatar">
           S
         </Avatar>
 
-        <div className="sidebar-header__text-content">
+        <div className="dash-sidebar-header__text-content">
           <p>Hello,</p>
           {/* TODO: GET Name data to replace Simon */}
           <h2>Simon</h2>
@@ -83,6 +99,33 @@ const DashSidebar: React.SFC<DashSidebarProps> = () => {
           {/* TODO: Fetch Groups belonging to this organization */}
         </List>
       </section>
+      <footer className="footer-sidebar">
+        <MIBottomNavigation
+          highlightNone
+          navItems={[
+            {
+              label: "Add Contacts",
+              icon: <i className="fas fa-address-book" />,
+              clickHandler: () => {},
+            },
+            {
+              label: "Settings",
+              icon: <i className="fas fa-cog" />,
+              clickHandler: () => {},
+            },
+          ]}
+        />
+        <Button
+          onClick={() => {
+            setIsOpen(false);
+          }}
+          className="footer-sidebar__close-btn"
+          color="primary"
+        >
+          <i className="fas fa-arrow-left" />
+          Close Sidebar
+        </Button>
+      </footer>
     </Paper>
   );
 };

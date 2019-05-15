@@ -1,16 +1,15 @@
-import "./search-box.scss";
+import { Paper, InputBase } from "./SearchBoxStyles";
 import React from "react";
-import {
-  Paper,
-  IconButton,
-  InputBase,
-} from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+
 import SpeechRecognition from "react-speech-recognition";
 import { useState } from "react";
 export interface SearchBoxProps {
   setSearchText: Function;
   searchText: Function;
   searchHandler: Function;
+  placeholderWhileMicOn: string;
+  placeholder: string;
   onMicStartHandler?: Function;
   onMicEndHandler?: Function;
   startListening: Function;
@@ -26,6 +25,8 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   searchHandler,
   onMicStartHandler,
   onMicEndHandler,
+  placeholder,
+  placeholderWhileMicOn,
   startListening,
   abortListening,
   transcript,
@@ -35,12 +36,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   // console.log(transcript);
   const [isMicOn, setIsMicOn] = useState(false);
   return (
-    <Paper
-      elevation={1}
-      className={`search-container ${
-        isMicOn ? "search-container__mic--on" : ""
-      }`}
-    >
+    <Paper elevation={1} isMicOn={isMicOn}>
       <IconButton
         aria-label="Search"
         data-testid="search-icon-button"
@@ -52,21 +48,23 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       </IconButton>
       <InputBase
         placeholder={`${
-          isMicOn
-            ? "Tell me your Organization Name"
-            : "Enter Organization Name"
+          isMicOn ? placeholderWhileMicOn : placeholder
         }`}
         className="search-container__search-box"
         data-testid="search-box"
-        value={isMicOn ? transcript : searchText}
-        onChange={e => {
+        value={
+          isMicOn
+            ? `${searchText} ${transcript}`
+            : searchText
+        }
+        onChange={(e: any) => {
           if (isMicOn) {
-            setSearchText(transcript);
+            setSearchText(`${searchText} ${transcript}`);
           } else {
             setSearchText(e.target.value);
           }
         }}
-        onKeyDown={e => {
+        onKeyDown={(e: any) => {
           if (e.keyCode === 13) {
             searchHandler();
           }
@@ -82,7 +80,6 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             }
             startListening();
             setIsMicOn(true);
-            resetTranscript();
           }}
         >
           <i className="fas fa-microphone" />
@@ -96,6 +93,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
             if (onMicEndHandler) {
               onMicEndHandler();
             }
+            setSearchText(`${searchText} ${transcript}`);
             abortListening();
             setIsMicOn(false);
             resetTranscript();

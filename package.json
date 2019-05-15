@@ -10,6 +10,7 @@
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.3",
+    "@types/styled-components": "^4.1.15",
     "@types/uuid": "^3.4.4",
     "mi-components": "0.0.4",
     "node-sass": "^4.12.0",
@@ -18,6 +19,7 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-speech-recognition": "^2.0.1",
+    "styled-components": "^4.2.0",
     "typescript": "3.4.5",
     "uuid": "^3.3.2"
   },

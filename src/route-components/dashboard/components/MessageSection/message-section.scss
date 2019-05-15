@@ -1,0 +1,39 @@
+@import "src/lib/styles/variables.scss";
+
+.message-section {
+    display: flex;
+    justify-content: space-between;
+    padding: $space-sm;
+}
+
+section.recent-messages {
+    max-width: 600px;
+    width: 100%;
+    @media screen and (max-width: $desktop) {
+        display: none;   
+    }
+}
+
+section.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background: lightblue;
+    width: 100%;
+}
+.chat__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: $space-xl;
+}
+.chat-footer {
+    display: flex;
+    & > * {
+        margin-right: $space-sm;
+    }
+    & > *:last-child {
+        margin-right: none;
+    }
+}
+

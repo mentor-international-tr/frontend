@@ -1,8 +1,25 @@
-@import "../../../../lib/styles/variables.scss";
+@import "src/lib/styles/variables.scss";
 
 .dash-sidebar {
     max-width: 400px;
     height: 100vh;
+    @media screen and (max-width: $tablet) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+}
+.dash-sidebar--open {
+    @media screen and (max-width: $tablet) {
+        display: block;
+    }
+}
+.dash-sidebar--close {
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
 }
 .dash-sidebar__header {
     display: flex;
@@ -11,7 +28,7 @@
     padding: 2.4em;
 }
 
-.sidebar-header__text-content {
+.dash-sidebar-header__text-content {
     margin-left: $space-xl;
     & > h2, & > p {
         margin: 0;
@@ -22,4 +39,18 @@
     display: flex;
     flex-direction: column;
     padding: 2.4em;
+}
+
+.footer-sidebar {
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+.footer-sidebar__close-btn {
+    @media screen and (max-width: $tablet) {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+
 }

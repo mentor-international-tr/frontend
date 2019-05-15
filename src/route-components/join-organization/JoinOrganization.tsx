@@ -21,6 +21,8 @@ const JoinOrganization: React.SFC<JoinOrganizationProps> = () => {
             searchText={searchText}
             setSearchText={setSearchText}
             searchHandler={searchOrganizations}
+            placeholder="Name of organization"
+            placeholderWhileMicOn="Tell me the organization name."
           />
         </form>
       </CardContent>

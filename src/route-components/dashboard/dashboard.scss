@@ -6,6 +6,9 @@
     display: flex;
     width: 100%;
     // background: lightblue;
+    @media screen and (max-width: $tablet) {
+        height: 100vh;
+    }
 }
 .dashboard-header {
     display: flex;
@@ -20,10 +23,39 @@
 }
 .dashboard-header__buttons {
     margin: 0 0 0 auto;
-    & > * {
+    & > button {
         margin-right: $space-md;
     }
-    & > *:last-child {
+    & > button:last-child {
         margin-right: 0;
+    }
+    @media screen and (max-width: $tablet) {
+        display: none;
+}
+}
+
+.dashboard-main__side-btns {
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+    position: fixed;
+    left: 0;
+    top: 70%;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+}
+.dashboard-nav {
+    @media screen and (max-width: $tablet) {
+        display: none;
+    }
+}
+
+.dashboard-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @media screen and (min-width: $tablet) {
+        display: none;
     }
 }

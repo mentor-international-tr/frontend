@@ -8,13 +8,21 @@ export interface DashboardProps {}
 
 const Dashboard: React.SFC<DashboardProps> = () => {
   const [hasFirstGroup, setHasFirstGroup] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   useEffect(() => {
     setHasFirstGroup(true);
   }, []);
   return (
     <div className="dashboard-container">
-      <DashSidebar />
-      {hasFirstGroup ? <MainContent /> : <StarterContent />}
+      <DashSidebar
+        isOpen={isSidebarOpen}
+        setIsOpen={setIsSidebarOpen}
+      />
+      {hasFirstGroup ? (
+        <MainContent setIsSidebarOpen={setIsSidebarOpen} />
+      ) : (
+        <StarterContent />
+      )}
     </div>
   );
 };
