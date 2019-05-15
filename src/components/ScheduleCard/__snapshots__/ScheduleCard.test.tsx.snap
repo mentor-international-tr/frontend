@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing <ScheduleCard /> component creates snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 sc-bdVaJa gTgABg"
+  >
+    <div
+      class="MuiCardContent-root-29 sc-bwzfXH jngNH"
+    >
+      <header
+        class="sc-htpNat fAaqcp"
+      >
+        <h2
+          class="sc-bxivhb bUZGRr"
+        >
+          Class Reminder
+        </h2>
+        <div
+          class="sc-ifAKCX cFlEyZ"
+        >
+          <button
+            aria-label="Edit"
+            class="MuiButtonBase-root-36 MuiIconButton-root-30"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label-35"
+            >
+              <i
+                class="fas fa-pencil-alt"
+              />
+            </span>
+            <span
+              class="MuiTouchRipple-root-39"
+            />
+          </button>
+          <button
+            aria-label="Delete"
+            class="MuiButtonBase-root-36 MuiIconButton-root-30"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label-35"
+            >
+              <i
+                class="fa fa-trash"
+              />
+            </span>
+            <span
+              class="MuiTouchRipple-root-39"
+            />
+          </button>
+        </div>
+      </header>
+      <div
+        class="sc-EHOje iYyHZw"
+      >
+        Don't forget, class tonight at 8 pm! Don't forget, class tonight at 8 pm!
+      </div>
+      <div
+        class="sc-bZQynM bUXyNz"
+      >
+        <p
+          class="sc-gzVnrw deJinG"
+        >
+          July 20th
+        </p>
+        <p
+          class="sc-gzVnrw deJinG"
+        >
+          Nov 24th
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

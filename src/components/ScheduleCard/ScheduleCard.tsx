@@ -9,11 +9,7 @@ import {
   DateBox,
   Date,
 } from "./ScheduleCardStyles";
-import {
-  Card,
-  CardContent,
-  IconButton,
-} from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 export interface ScheduleCardProps {
   title: string;
   message: string;
@@ -35,17 +31,14 @@ const ScheduleCard: React.SFC<ScheduleCardProps> = ({
               <i className="fas fa-pencil-alt" />
             </IconButton>
             <IconButton aria-label="Delete">
-              <i
-                className="fa fa-trash"
-                aria-hidden="true"
-              />
+              <i className="fa fa-trash" />
             </IconButton>
           </ActionButtonsWrapper>
         </Header>
         <MessageBox>{message}</MessageBox>
         <DateBox>
           {dates.map((date: string) => {
-            return <Date>{date}</Date>;
+            return <Date key={date}>{date}</Date>;
           })}
         </DateBox>
       </MICardContent>
