@@ -35,6 +35,9 @@
 }
 
 .dashboard-main__side-btns {
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
     position: fixed;
     left: 0;
     top: 70%;
