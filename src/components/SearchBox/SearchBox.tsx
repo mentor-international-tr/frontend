@@ -8,6 +8,8 @@ export interface SearchBoxProps {
   setSearchText: Function;
   searchText: Function;
   searchHandler: Function;
+  placeholderWhileMicOn: string;
+  placeholder: string;
   onMicStartHandler?: Function;
   onMicEndHandler?: Function;
   startListening: Function;
@@ -23,6 +25,8 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   searchHandler,
   onMicStartHandler,
   onMicEndHandler,
+  placeholder,
+  placeholderWhileMicOn,
   startListening,
   abortListening,
   transcript,
@@ -44,9 +48,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       </IconButton>
       <InputBase
         placeholder={`${
-          isMicOn
-            ? "Tell me your Organization Name"
-            : "Enter Organization Name"
+          isMicOn ? placeholderWhileMicOn : placeholder
         }`}
         className="search-container__search-box"
         data-testid="search-box"
