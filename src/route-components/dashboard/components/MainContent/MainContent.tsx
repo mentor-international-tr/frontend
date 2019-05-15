@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
+import MessageSection from "../MessageSection/MessageSection";
 
 export interface MainContentProps {
   setIsSidebarOpen: Function;
@@ -66,9 +67,11 @@ const MainContent: React.SFC<MainContentProps> = ({
       />
       <Divider />
       <main className="dashboard-main">
-        {/* <MessagesSection />
-        <TemplatesSection />
-        <PeopleSection /> */}
+        {activeNavText === MESSAGES ? (
+          <MessageSection />
+        ) : null}
+        {/* {activeNavText === TEMPLATES ? <TemplatesSection /> : null}
+        {activeNavText === PEOPLE ? <PeopleSection /> : null} */}
         <div className="dashboard-main__side-btns">
           <Button
             className="dashboard-main__mobile-side-open-btn"
