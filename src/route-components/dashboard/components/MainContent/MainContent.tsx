@@ -1,13 +1,15 @@
 import "./main-content.scss";
 import React, { useState } from "react";
-import Navbar from "components/Navbar/Navbar";
 import {
   Avatar,
   Divider,
   Button,
   IconButton,
+  Tab,
+  Tabs,
+  BottomNavigation,
+  BottomNavigationAction,
 } from "@material-ui/core";
-import MIBottomNavigation from "components/MIBottomNavigation/MIBottomNavigation";
 import MessageSection from "../MessageSection/MessageSection";
 
 export interface MainContentProps {
@@ -17,13 +19,15 @@ export interface MainContentProps {
 const MainContent: React.SFC<MainContentProps> = ({
   setIsSidebarOpen,
 }) => {
-  const MESSAGES = "Messages";
-  const TEMPLATES = "Templates";
-  const PEOPLE = "People";
-  const [activeNavText, setActiveNavText] = useState(
-    MESSAGES,
-  );
-  console.log(activeNavText);
+  const tabs: any = {
+    0: "Messages",
+    1: "Schedules",
+    2: "People",
+  };
+  const [activeNavValue, setActiveNavValue] = useState(0);
+  const activeValChange = (event: any, value: number) => {
+    setActiveNavValue(value);
+  };
   return (
     <div className="dashboard-main-content">
       <header className="dashboard-header">
@@ -50,24 +54,21 @@ const MainContent: React.SFC<MainContentProps> = ({
           </IconButton>
         </div>
       </header>
-      <Navbar
+      <Tabs
         className="dashboard-nav"
-        setText={setActiveNavText}
-        navItems={[
-          {
-            text: MESSAGES,
-          },
-          {
-            text: TEMPLATES,
-          },
-          {
-            text: PEOPLE,
-          },
-        ]}
-      />
+        value={activeNavValue}
+        textColor="primary"
+        indicatorColor="primary"
+        onChange={activeValChange}
+      >
+        <Tab label={tabs[0]} />
+        <Tab label={tabs[1]} />
+        <Tab label={tabs[2]} />
+      </Tabs>
+
       <Divider />
       <main className="dashboard-main">
-        {activeNavText === MESSAGES ? (
+        {tabs[0] === tabs[activeNavValue] ? (
           <MessageSection />
         ) : null}
         {/* {activeNavText === TEMPLATES ? <TemplatesSection /> : null}
@@ -75,32 +76,24 @@ const MainContent: React.SFC<MainContentProps> = ({
       </main>
 
       <footer className="dashboard-footer">
-        <MIBottomNavigation
-          className="dashboard-footer__mobile-nav"
-          navItems={[
-            {
-              label: MESSAGES,
-              icon: <i className="fas fa-envelope" />,
-              clickHandler: () => {
-                setActiveNavText(MESSAGES);
-              },
-            },
-            {
-              label: TEMPLATES,
-              icon: <i className="fas fa-columns" />,
-              clickHandler: () => {
-                setActiveNavText(TEMPLATES);
-              },
-            },
-            {
-              label: PEOPLE,
-              icon: <i className="fas fa-users" />,
-              clickHandler: () => {
-                setActiveNavText(PEOPLE);
-              },
-            },
-          ]}
-        />
+        <BottomNavigation
+          onChange={activeValChange}
+          value={activeNavValue}
+          showLabels
+        >
+          <BottomNavigationAction
+            label={tabs[0]}
+            icon={<i className="fas fa-envelope" />}
+          />
+          <BottomNavigationAction
+            label={tabs[1]}
+            icon={<i className="fas fa-columns" />}
+          />
+          <BottomNavigationAction
+            label={tabs[2]}
+            icon={<i className="fas fa-users" />}
+          />
+        </BottomNavigation>
         <Button
           variant="contained"
           className="dashboard-footer__open-sidebar-btn"
