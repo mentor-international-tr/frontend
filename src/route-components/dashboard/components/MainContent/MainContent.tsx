@@ -12,6 +12,7 @@ import {
 } from "@material-ui/core";
 import MessageSection from "../MessageSection/MessageSection";
 import ScheduleSection from "../ScheduleSection/ScheduleSection";
+import PeopleSection from "../PeopleSection/PeopleSection";
 
 export interface MainContentProps {
   setIsSidebarOpen: Function;
@@ -25,7 +26,7 @@ const MainContent: React.SFC<MainContentProps> = ({
     1: "Schedules",
     2: "People",
   };
-  const [activeNavValue, setActiveNavValue] = useState(1);
+  const [activeNavValue, setActiveNavValue] = useState(2);
   const activeValChange = (event: any, value: number) => {
     setActiveNavValue(value);
   };
@@ -75,7 +76,9 @@ const MainContent: React.SFC<MainContentProps> = ({
         {tabs[1] === tabs[activeNavValue] ? (
           <ScheduleSection />
         ) : null}
-        {/* {activeNavText === PEOPLE ? <PeopleSection /> : null} */}
+        {tabs[2] === tabs[activeNavValue] ? (
+          <PeopleSection />
+        ) : null}
       </main>
 
       <footer className="dashboard-footer">
