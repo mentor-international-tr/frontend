@@ -8,11 +8,11 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import classNames from "classnames";
-
-const CustomTableCell = withStyles(theme => ({
+import vars from "lib/styles/variables";
+const CustomTableCell = withStyles(() => ({
   head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: vars.black,
+    color: vars.white,
   },
   body: {
     fontSize: 14,
