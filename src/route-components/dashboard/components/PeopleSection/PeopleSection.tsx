@@ -18,6 +18,7 @@ const PeopleSection: React.SFC<PeopleSectionProps> = () => {
       />
 
       <MITable
+        className="people-joined-table"
         tableHeaders={["Name", "Date Joined"]}
         tableBody={[
           {
