@@ -1,0 +1,14 @@
+@import "lib/styles/variables.scss";
+
+section.people-section {
+    padding: $space-xl;
+    max-width: 800px;
+}
+
+.people-section__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.people-joined-table {
+}
