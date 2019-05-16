@@ -7,6 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import classNames from "classnames";
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -41,12 +42,14 @@ interface MITable {
   tableHeaders: string[];
   tableBody: object[];
   includeOnly: string[];
+  className: string;
 }
 const MITable: React.SFC<MITable> = ({
   classes,
   tableHeaders,
   tableBody,
   includeOnly,
+  className,
 }) => {
   const includeObj = includeOnly.reduce(
     (acc: any, prop: string) => {
@@ -59,8 +62,10 @@ const MITable: React.SFC<MITable> = ({
     {},
   );
   return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+    <Paper className={classNames(classes.root, className)}>
+      <Table
+        className={classNames(classes.table, className)}
+      >
         <TableHead>
           <TableRow>
             {tableHeaders.map((headerName: string) => {
