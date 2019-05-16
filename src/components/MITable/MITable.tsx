@@ -101,6 +101,7 @@ const MITable: React.SFC<MITable> = ({
                     </CustomTableCell>
                   );
                 }
+                return null;
               })}
             </TableRow>
           ))}
