@@ -35,10 +35,12 @@ const styles = (theme: any): any => ({
 });
 
 interface MITable {
-  classes: any;
-  tableHeaders: any;
-  tableBody: any;
-  includeOnly: any;
+  classes: {
+    [key: string]: any,
+  };
+  tableHeaders: string[];
+  tableBody: object[];
+  includeOnly: string[];
 }
 const MITable: React.SFC<MITable> = ({
   classes,
@@ -56,7 +58,6 @@ const MITable: React.SFC<MITable> = ({
     },
     {},
   );
-  console.log(includeObj);
   return (
     <Paper className={classes.root}>
       <Table className={classes.table}>
@@ -76,9 +77,9 @@ const MITable: React.SFC<MITable> = ({
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableBody.map((row: any) => (
+          {tableBody.map((row: { [key: string]: any }) => (
             <TableRow className={classes.row} key={row.id}>
-              {Object.keys(row).map((key: any) => {
+              {Object.keys(row).map((key: string) => {
                 if (includeOnly) {
                   if (includeObj[key]) {
                     return (
