@@ -2,7 +2,13 @@
 
 section.people-section {
     padding: $space-xl;
-}
-.people-joined-table {
     max-width: 800px;
+}
+
+.people-section__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.people-joined-table {
 }
