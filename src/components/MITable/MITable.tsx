@@ -53,7 +53,6 @@ const MITable: React.SFC<MITable> = ({
 }) => {
   const includeObj = includeOnly.reduce(
     (acc: any, prop: string) => {
-      console.log(acc);
       return {
         ...acc,
         [prop]: true,
