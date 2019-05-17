@@ -1,5 +1,5 @@
 import "./message-section.scss";
-import React, { useState } from "react";
+import React from "react";
 import SearchBox from "components/SearchBox/SearchBox";
 import {
   Divider,
@@ -10,17 +10,23 @@ import {
   Avatar,
   ListItemText,
 } from "@material-ui/core";
-export interface MessageSectionProps {}
+export interface MessageSectionProps {
+  msgState: {
+    [key: string]: any;
+  }
+  msgDispatch: Function;
+}
 
-const MessageSection: React.SFC<MessageSectionProps> = () => {
-  const [searchText, setSearchText] = useState("");
-  const [chatMsg, setChatMsg] = useState("");
+const MessageSection: React.SFC<MessageSectionProps> = ({ msgState, msgDispatch }) => {
   return (
     <section className="message-section">
       <section className="recent-messages">
         <SearchBox
-          searchText={searchText}
-          setSearchText={setSearchText}
+          searchText={msgState.searchText}
+          setSearchText={(text: string) => {
+            msgDispatch({ type: "SET_TEXT", name: "searchText", text})
+          }}
+
           searchHandler={() => {}}
           placeholder="Search for people to message"
           placeholderWhileMicOn="Tell me the person you want to message."
@@ -45,8 +51,10 @@ const MessageSection: React.SFC<MessageSectionProps> = () => {
         </List>
         <form className="chat-msg-form">
           <SearchBox
-            searchText={chatMsg}
-            setSearchText={setChatMsg}
+            searchText={msgState.chatText}
+            setSearchText={(text: string) => {
+              msgDispatch({ type: "SET_TEXT", name: "chatText", text })
+            }}
             searchHandler={() => {}}
             placeholder={`Message Everyone in Training Cohort #1`}
             placeholderWhileMicOn="Start speaking your chat message!"

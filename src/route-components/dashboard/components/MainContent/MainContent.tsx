@@ -13,6 +13,7 @@ import {
 import MessageSection from "../MessageSection/MessageSection";
 import ScheduleSection from "../ScheduleSection/ScheduleSection";
 import PeopleSection from "../PeopleSection/PeopleSection";
+import { msgReducer } from "./reducers/index";
 
 export interface MainContentProps {
   setIsSidebarOpen: Function;
@@ -26,7 +27,8 @@ const MainContent: React.SFC<MainContentProps> = ({
     1: "Schedules",
     2: "People",
   };
-  const [activeNavValue, setActiveNavValue] = useState(2);
+  const [activeNavValue, setActiveNavValue] = useState(0);
+  const [msgState, msgDispatch] = msgReducer();
   const activeValChange = (event: any, value: number) => {
     setActiveNavValue(value);
   };
@@ -71,7 +73,10 @@ const MainContent: React.SFC<MainContentProps> = ({
       <Divider />
       <main className="dashboard-main">
         {tabs[0] === tabs[activeNavValue] ? (
-          <MessageSection />
+          <MessageSection
+            msgState={msgState}
+            msgDispatch={msgDispatch}
+          />
         ) : null}
         {tabs[1] === tabs[activeNavValue] ? (
           <ScheduleSection />
