@@ -10,6 +10,7 @@ export interface SearchBoxProps {
   searchHandler: Function;
   placeholderWhileMicOn: string;
   placeholder: string;
+  micAutoStart: boolean;
   onMicStartHandler?: Function;
   onMicEndHandler?: Function;
   startListening: Function;
@@ -27,6 +28,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   onMicEndHandler,
   placeholder,
   placeholderWhileMicOn,
+  micAutoStart,
   startListening,
   abortListening,
   transcript,
@@ -34,7 +36,8 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
   browserSupportsSpeechRecognition,
 }) => {
   // console.log(transcript);
-  const [isMicOn, setIsMicOn] = useState(false);
+  const [isMicOn, setIsMicOn] = useState(micAutoStart);
+
   return (
     <MIPaper
       elevation={1}
@@ -108,7 +111,11 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
     </MIPaper>
   );
 };
-
+SearchBox.defaultProps = {
+  micAutoStart: false,
+  placeholder: "",
+  placeholderWhileMicOn: "",
+};
 export default SpeechRecognition({ autoStart: false })(
   SearchBox,
 );
