@@ -93,7 +93,7 @@ const SearchBox: React.SFC<SearchBoxProps> = ({
       ) : null}
       {browserSupportsSpeechRecognition && isMicOn ? (
         <IconButton
-          aria-label="Clear search box and exit microphone mode"
+          aria-label="Exit microphone mode"
           data-testid="x-icon-button"
           onClick={() => {
             if (onMicEndHandler) {
